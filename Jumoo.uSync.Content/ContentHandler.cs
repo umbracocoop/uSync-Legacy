@@ -89,7 +89,9 @@ namespace Jumoo.uSync.Content
                 return actions;
 
             var itemName = base.GetItemFileName(item);
-
+            if ( itemName.Length > 37 ) {
+              itemName = item.Id.ToString();
+            }
             var itemPath = Path.Combine(path, itemName);
             // var itemPath = string.Format("{0}/{1}", path, item.Name.ToSafeFileName());
 

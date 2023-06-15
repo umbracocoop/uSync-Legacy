@@ -88,7 +88,9 @@ namespace Jumoo.uSync.Content
                 return actions;
 
             var itemName = base.GetItemFileName(item);
-
+            if ( item.ContentType.Alias == "Image" && itemName.Length > 37 ) {
+              itemName = item.Id.ToString();
+            }
             var itemPath = Path.Combine(path, itemName);
             actions.Add(ExportItem(item, itemPath, root));
 
