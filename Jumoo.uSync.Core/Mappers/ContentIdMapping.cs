@@ -24,7 +24,7 @@ namespace Jumoo.uSync.Core.Mappers
             if (!regex.IsNullOrWhiteSpace())
                 _exportRegex = regex;
             else
-                _exportRegex = @"\d{4,9}";
+                _exportRegex = @"(?<!-)\d{4,9}(?!-)";
 
             this.baseObjectType = objectType;
         }
